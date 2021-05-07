@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <script src= "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Product</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/saveproduct}" th:object="${product}" method="post">
+
+
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Product Name</label>
+                    <td>
+                        <input type="hidden" th:field="*{product_id}" />
+                        <input type="text" th:field="*{product_name}" class="form-control" placeholder="Customer Name" />
+                    </td>
+                </tr>
+            </div>
+
+            <div alight="left">
+
+                <tr>
+                    <label class="form-label" >Product Price</label>
+                    <td><input type="text" th:field="*{price}" class="form-control" placeholder="Price" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Product Size</label>
+                    <td><input type="text" th:field="*{size}" class="form-control" placeholder="Size" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Style</label>
+                    <td><input type="text" th:field="*{style}" class="form-control" placeholder="Style" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Color</label>
+                    <td><input type="text" th:field="*{color}" class="form-control" placeholder="Color" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Quantity</label>
+                    <td><input type="text" th:field="*{quantity}" class="form-control" placeholder="Quantity" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >WareHouse Id</label>
+                    <td><input type="text" th:field="*{warehouse_id}" class="form-control" placeholder="WareHouse Id" /></td>
+                </tr>
+            </div>
+            <br>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

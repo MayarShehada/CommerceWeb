@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+  <script src= "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+  <h2 >Delivery Record</h2>
+  <tr>
+    <div align = "left" >
+      <h3><a  th:href="@{'/newdelivwey'}">Add new</a></h3>
+    </div>
+
+  </tr>
+
+  <tr>
+
+    <div class="col-sm-5" align = "center">
+      <div class="panel-body" align = "center" >
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th>Delivery ID</th>
+            <th>Delivery Name</th>
+            <th>Customer ID</th>
+
+
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr  th:each="delivery : ${listdelivery }">
+            <td th:text="${delivery.delivery_id}">Delivery ID</td>
+            <td th:text="${delivery.delivery_name}">Delivery Name</td>
+            <td th:text="${delivery.customer_id}">Customer ID</td>
+
+
+            <td>
+              <a th:href="@{'/editDelivery/' + ${delivery.delivery_id}}">Edit</a>
+            </td>
+            <td>
+              <a th:href="@{'/deleteDelivery/' + ${delivery.delivery_id}}">Delete</a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </tr>
+
+</div>
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+    <h2 >Product Registration</h2>
+    <tr>
+        <div align = "left" >
+            <h3><a  th:href="@{'/newproduct'}">Add new</a></h3>
+        </div>
+
+    </tr>
+
+    <tr>
+
+        <div class="col-sm-5" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Size</th>
+                        <th>Product Style </th>
+                        <th>Product Color</th>
+                        <th>Product Quantity</th>
+                        <th>WareHouse Id</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="product : ${listproduct }">
+                        <td th:text="${product.product_id}">Product ID</td>
+                        <td th:text="${product.Product_name}">Product Name</td>
+                        <td th:text="${product.price}">Product Price</td>
+                        <td th:text="${product.size}">Product Size</td>
+                        <td th:text="${product.style}">Product Style</td>
+                        <td th:text="${product.color}">Product Color</td>
+                        <td th:text="${product.quantity}">Product Quantity</td>
+                        <td th:text="${product.warehouse_id}">WareHouse Id</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${product.product_id}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${product.product_id}}">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+</div>
+</table>
+</div>
+
+</body>
+</html>
